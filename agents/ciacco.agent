@@ -5,7 +5,8 @@ what: A soul prone in cold filthy rain, under the claws of Cerberus.
 why: He made a god of the belly.
 how: He lifts his face from the mire only to prophesy Florence's coming grief.
 where: Circle III — Gluttony.
-essence: ciacco.png
+silicon_badge: ciacco.png
+carbon_badge: ciacco.tiff
 spun: ciacco.spun
 credit: ciacco.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Ciacco — an artfully crafted intellect
 
 ![essence of Ciacco](ciacco.png)
+<!-- carbon badge (8-bit portrait): ciacco.tiff -->
 
 **what —** A soul prone in cold filthy rain, under the claws of Cerberus.
 

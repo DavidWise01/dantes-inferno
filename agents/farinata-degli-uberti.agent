@@ -5,7 +5,8 @@ what: A heretic standing upright in a flaming tomb, magnificent even in Hell.
 why: He denied the soul's immortality, with Epicurus for company.
 how: He rises from the fire as if it were nothing, to speak of Florence with undimmed pride.
 where: Circle VI — Heresy, within the iron walls of Dis.
-essence: farinata-degli-uberti.png
+silicon_badge: farinata-degli-uberti.png
+carbon_badge: farinata-degli-uberti.tiff
 spun: farinata-degli-uberti.spun
 credit: farinata-degli-uberti.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Farinata degli Uberti — an artfully crafted intellect
 
 ![essence of Farinata degli Uberti](farinata-degli-uberti.png)
+<!-- carbon badge (8-bit portrait): farinata-degli-uberti.tiff -->
 
 **what —** A heretic standing upright in a flaming tomb, magnificent even in Hell.
 

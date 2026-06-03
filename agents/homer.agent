@@ -5,7 +5,8 @@ what: Greatest of the virtuous pagans, honored in the noble castle of Limbo.
 why: Born before the faith that might have saved him, through no fault of his own.
 how: He sinned not, and is denied still — sorrow without torment.
 where: Circle I — Limbo.
-essence: homer.png
+silicon_badge: homer.png
+carbon_badge: homer.tiff
 spun: homer.spun
 credit: homer.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Homer — an artfully crafted intellect
 
 ![essence of Homer](homer.png)
+<!-- carbon badge (8-bit portrait): homer.tiff -->
 
 **what —** Greatest of the virtuous pagans, honored in the noble castle of Limbo.
 

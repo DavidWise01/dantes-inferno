@@ -5,7 +5,8 @@ what: A simoniac, planted head-down in stone with his soles on fire.
 why: He made merchandise of holy things.
 how: He mistakes Dante for Boniface, come early to take his place.
 where: Circle VIII — Fraud, the third ditch (simony).
-essence: pope-nicholas-iii.png
+silicon_badge: pope-nicholas-iii.png
+carbon_badge: pope-nicholas-iii.tiff
 spun: pope-nicholas-iii.spun
 credit: pope-nicholas-iii.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Pope Nicholas III — an artfully crafted intellect
 
 ![essence of Pope Nicholas III](pope-nicholas-iii.png)
+<!-- carbon badge (8-bit portrait): pope-nicholas-iii.tiff -->
 
 **what —** A simoniac, planted head-down in stone with his soles on fire.
 

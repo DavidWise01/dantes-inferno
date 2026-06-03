@@ -5,7 +5,8 @@ what: The philosopher all the others defer to, in Limbo's castle.
 why: Reason perfected — but reason alone cannot reach Heaven.
 how: Honored above all his peers, and forever one step short.
 where: Circle I — Limbo.
-essence: aristotle.png
+silicon_badge: aristotle.png
+carbon_badge: aristotle.tiff
 spun: aristotle.spun
 credit: aristotle.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Aristotle — an artfully crafted intellect
 
 ![essence of Aristotle](aristotle.png)
+<!-- carbon badge (8-bit portrait): aristotle.tiff -->
 
 **what —** The philosopher all the others defer to, in Limbo's castle.
 

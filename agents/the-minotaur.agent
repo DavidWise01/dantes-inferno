@@ -5,7 +5,8 @@ what: The bellowing warden of the Circle of Violence.
 why: Rage and monstrousness made into a gatekeeper.
 how: It gnaws itself in fury — and in its blind rage the travelers slip past.
 where: The shattered cliff down into Circle VII.
-essence: the-minotaur.png
+silicon_badge: the-minotaur.png
+carbon_badge: the-minotaur.tiff
 spun: the-minotaur.spun
 credit: the-minotaur.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # The Minotaur — an artfully crafted intellect
 
 ![essence of The Minotaur](the-minotaur.png)
+<!-- carbon badge (8-bit portrait): the-minotaur.tiff -->
 
 **what —** The bellowing warden of the Circle of Violence.
 

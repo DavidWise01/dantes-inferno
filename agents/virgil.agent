@@ -5,7 +5,8 @@ what: Dante's guide through Hell and Purgatory — reason itself, given a voice.
 why: Sent by Beatrice to lead a living soul as far as reason can go.
 how: With calm authority — and the quiet grief of a virtuous pagan who cannot follow to Heaven.
 where: He dwells in Limbo, and walks the pilgrim down and up.
-essence: virgil.png
+silicon_badge: virgil.png
+carbon_badge: virgil.tiff
 spun: virgil.spun
 credit: virgil.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Virgil — an artfully crafted intellect
 
 ![essence of Virgil](virgil.png)
+<!-- carbon badge (8-bit portrait): virgil.tiff -->
 
 **what —** Dante's guide through Hell and Purgatory — reason itself, given a voice.
 

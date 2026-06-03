@@ -5,7 +5,8 @@ what: A false counselor, his soul wrapped in a single tongue of flame.
 why: The Trojan Horse, and a lifetime of guile that won and ruined.
 how: He speaks from inside the fire, and his words are gold and ruin at once.
 where: Circle VIII — Fraud, the eighth ditch of Malebolge.
-essence: ulysses.png
+silicon_badge: ulysses.png
+carbon_badge: ulysses.tiff
 spun: ulysses.spun
 credit: ulysses.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Ulysses — an artfully crafted intellect
 
 ![essence of Ulysses](ulysses.png)
+<!-- carbon badge (8-bit portrait): ulysses.tiff -->
 
 **what —** A false counselor, his soul wrapped in a single tongue of flame.
 

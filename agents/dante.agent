@@ -5,7 +5,8 @@ what: The pilgrim who walks down through Hell, up the Mount, and home to the sta
 why: To be saved, and to bring back the map for everyone else.
 how: Led first by reason, then by grace, one trembling foot before the next.
 where: From the dark wood to the Empyrean — through all three realms.
-essence: dante.png
+silicon_badge: dante.png
+carbon_badge: dante.tiff
 spun: dante.spun
 credit: dante.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Dante — an artfully crafted intellect
 
 ![essence of Dante](dante.png)
+<!-- carbon badge (8-bit portrait): dante.tiff -->
 
 **what —** The pilgrim who walks down through Hell, up the Mount, and home to the stars.
 

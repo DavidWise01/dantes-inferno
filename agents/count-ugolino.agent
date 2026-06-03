@@ -5,7 +5,8 @@ what: A traitor frozen in the ice, gnawing forever the skull of the archbishop w
 why: Betrayal answered with betrayal — and a hunger that outlasts death.
 how: He lifts his mouth from Ruggieri's skull only to speak, then bends again to it.
 where: Circle IX — Treachery (Antenora, to country and party).
-essence: count-ugolino.png
+silicon_badge: count-ugolino.png
+carbon_badge: count-ugolino.tiff
 spun: count-ugolino.spun
 credit: count-ugolino.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Count Ugolino — an artfully crafted intellect
 
 ![essence of Count Ugolino](count-ugolino.png)
+<!-- carbon badge (8-bit portrait): count-ugolino.tiff -->
 
 **what —** A traitor frozen in the ice, gnawing forever the skull of the archbishop who doomed him.
 

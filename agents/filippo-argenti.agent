@@ -5,7 +5,8 @@ what: A wrathful soul in the marsh of the Styx who lunges at the passing boat.
 why: A rage that could never be governed.
 how: He is torn at by the other wrathful — and Dante, for once, is glad to watch.
 where: Circle V — Wrath (Phlegyas ferries; the sullen choke below the mud).
-essence: filippo-argenti.png
+silicon_badge: filippo-argenti.png
+carbon_badge: filippo-argenti.tiff
 spun: filippo-argenti.spun
 credit: filippo-argenti.1099
 attribution: ROOT0-ATTRIBUTION-v1.0
@@ -15,6 +16,7 @@ license: MIT
 # Filippo Argenti — an artfully crafted intellect
 
 ![essence of Filippo Argenti](filippo-argenti.png)
+<!-- carbon badge (8-bit portrait): filippo-argenti.tiff -->
 
 **what —** A wrathful soul in the marsh of the Styx who lunges at the passing boat.
 
