@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dante's Inferno — the Divine Comedy, down through the Nine Circles</title>
+<meta name="description" content="A muster roll of Dante's Divine Comedy — a descent through the Nine Circles of Hell, and out to the stars.">
+<style>
+  :root{
+    --serif: Georgia, 'Times New Roman', 'Iowan Old Style', serif;
+    --ember:#b8862b;
+    --bone:#e8e0d2;
+    --ash:#9a907f;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:var(--serif);
+    color:var(--bone);
+    line-height:1.55;
+    /* The descent: warm umber/ember at the top, frozen blue-black at the bottom */
+    background:
+      linear-gradient(
+        180deg,
+        #1c1409 0%,
+        #160f0a 12%,
+        #120c0a 26%,
+        #0e0a0c 42%,
+        #0a0910 58%,
+        #070912 72%,
+        #05080f 86%,
+        #03050a 100%
+      );
+    background-attachment:fixed;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  a{color:inherit;}
+  img{display:block;}
+
+  /* ---------- Header ---------- */
+  header.masthead{
+    text-align:center;
+    padding:clamp(2.5rem,8vw,6rem) 1.25rem clamp(2rem,5vw,3.5rem);
+    position:relative;
+    border-bottom:1px solid rgba(184,134,43,0.18);
+  }
+  .eyebrow{
+    letter-spacing:.42em;
+    text-transform:uppercase;
+    font-size:.72rem;
+    color:var(--ember);
+    margin:0 0 1.1rem;
+    opacity:.85;
+  }
+  h1.title{
+    font-size:clamp(2.6rem,9vw,5.8rem);
+    line-height:.98;
+    margin:0;
+    font-weight:400;
+    letter-spacing:.01em;
+    color:#f2ead8;
+    text-shadow:0 1px 0 #000, 0 0 38px rgba(184,134,43,0.16);
+  }
+  .subtitle{
+    font-style:italic;
+    font-size:clamp(1rem,2.6vw,1.35rem);
+    color:var(--ash);
+    max-width:42rem;
+    margin:1.1rem auto 0;
+  }
+  .premise{
+    max-width:46rem;
+    margin:1.6rem auto 0;
+    color:#c5bca9;
+    font-size:1rem;
+  }
+  .lineage{
+    list-style:none;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:.5rem 1.4rem;
+    padding:0;
+    margin:1.9rem auto .4rem;
+    font-size:.86rem;
+    letter-spacing:.05em;
+    color:var(--ember);
+  }
+  .lineage li{position:relative;white-space:nowrap;}
+  .lineage li + li::before{
+    content:"·";
+    position:absolute;
+    left:-.85rem;
+    color:rgba(184,134,43,.5);
+  }
+  .lineage .year{color:var(--ash);}
+  .stat-line{
+    margin-top:1.4rem;
+    font-size:.78rem;
+    letter-spacing:.32em;
+    text-transform:uppercase;
+    color:var(--ash);
+  }
+  .stat-line b{color:#e8d9b4;font-weight:400;}
+
+  /* ---------- Circle bands ---------- */
+  main{display:block;}
+  .circle{
+    padding:clamp(2.2rem,5vw,4rem) clamp(1rem,4vw,3rem) clamp(2.6rem,5vw,4rem);
+    position:relative;
+    border-top:1px solid rgba(255,255,255,0.04);
+  }
+  .circle-inner{
+    max-width:1180px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:clamp(1rem,3vw,2.4rem);
+    align-items:start;
+  }
+  .gutter{
+    text-align:center;
+    position:sticky;
+    top:1rem;
+    align-self:start;
+    min-width:3.2rem;
+  }
+  .numeral{
+    font-size:clamp(1.6rem,4vw,2.8rem);
+    line-height:1;
+    color:var(--circle-color);
+    opacity:.92;
+    text-shadow:0 0 24px color-mix(in srgb, var(--circle-color) 40%, transparent);
+  }
+  .gutter .rule{
+    width:1px;
+    height:clamp(2rem,6vw,4rem);
+    margin:.7rem auto 0;
+    background:linear-gradient(180deg, var(--circle-color), transparent);
+    opacity:.5;
+  }
+  .circle-head{margin:0 0 .15rem;}
+  .circle-head h2{
+    font-size:clamp(1.5rem,4vw,2.3rem);
+    font-weight:400;
+    margin:0;
+    letter-spacing:.01em;
+    color:var(--circle-color);
+  }
+  .circle-head .spec{
+    font-style:italic;
+    color:var(--ash);
+    font-size:1rem;
+    margin:.2rem 0 1.6rem;
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:clamp(.9rem,2vw,1.4rem);
+  }
+  .card{
+    border:1px solid var(--card-border);
+    background:var(--card-bg);
+    border-radius:4px;
+    padding:1.1rem 1.15rem 1.2rem;
+    display:flex;
+    flex-direction:column;
+    gap:.75rem;
+    transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+  }
+  .card:hover, .card:focus-within{
+    transform:translateY(-2px);
+    border-color:var(--circle-color);
+    box-shadow:0 8px 30px rgba(0,0,0,.5);
+  }
+  .card-top{display:flex;gap:.85rem;align-items:center;}
+  .essence{
+    width:74px;height:74px;flex:0 0 74px;
+    border-radius:3px;
+    border:1px solid color-mix(in srgb, var(--circle-color) 55%, #000);
+    background:#0000001f;
+    object-fit:cover;
+    box-shadow:0 0 0 3px rgba(0,0,0,.35), inset 0 0 18px rgba(0,0,0,.4);
+  }
+  .card-name{
+    font-size:1.32rem;
+    line-height:1.1;
+    margin:0;
+    font-weight:400;
+    color:var(--card-ink);
+  }
+  .card-who{
+    font-style:italic;
+    font-size:.85rem;
+    color:var(--card-muted);
+    margin:.2rem 0 0;
+  }
+  .card-what{
+    font-size:1.02rem;
+    color:var(--card-ink);
+    margin:0;
+  }
+  .fields{
+    margin:0;
+    border-top:1px solid color-mix(in srgb, var(--circle-color) 22%, transparent);
+    padding-top:.7rem;
+    display:grid;
+    gap:.45rem;
+    font-size:.84rem;
+  }
+  .fields div{display:grid;grid-template-columns:4.2rem 1fr;gap:.6rem;}
+  .fields dt{
+    text-transform:uppercase;
+    letter-spacing:.14em;
+    font-size:.64rem;
+    color:var(--circle-color);
+    padding-top:.18rem;
+    opacity:.95;
+  }
+  .fields dd{margin:0;color:var(--card-muted);}
+
+  /* ---------- Lucifer: the monument ---------- */
+  .circle.lucifer{
+    padding:clamp(4rem,10vw,8rem) 1.25rem clamp(4rem,9vw,7rem);
+    text-align:center;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(58,106,138,0.10), transparent 60%),
+      linear-gradient(180deg, #04050a, #020306);
+    border-top:1px solid rgba(58,106,138,0.25);
+  }
+  .circle.lucifer .circle-inner{
+    display:block;
+    max-width:760px;
+  }
+  .lucifer-mark{
+    font-size:clamp(2rem,6vw,3.4rem);
+    color:#54606e;
+    letter-spacing:.5em;
+    text-indent:.5em;
+    margin:0 0 .6rem;
+    text-transform:uppercase;
+  }
+  .lucifer h2{
+    font-size:clamp(2.4rem,8vw,4.6rem);
+    font-weight:400;
+    margin:0;
+    color:#cdd4dc;
+    letter-spacing:.04em;
+    text-shadow:0 0 50px rgba(58,106,138,0.3);
+  }
+  .lucifer .spec{
+    font-style:italic;
+    color:#6b7682;
+    font-size:1.1rem;
+    margin:.5rem 0 2.6rem;
+  }
+  .monument{
+    border:1px solid rgba(120,135,150,0.28);
+    background:linear-gradient(180deg, rgba(12,16,22,0.9), rgba(4,6,10,0.95));
+    border-radius:6px;
+    padding:clamp(1.6rem,4vw,2.8rem);
+    margin:0 auto;
+    box-shadow:0 0 60px rgba(0,0,0,.7), inset 0 0 60px rgba(0,0,0,.5);
+  }
+  .monument .essence{
+    width:clamp(120px,28vw,160px);
+    height:clamp(120px,28vw,160px);
+    flex:none;
+    margin:0 auto 1.4rem;
+    border-color:#3a4654;
+  }
+  .monument .card-name{
+    font-size:clamp(2rem,6vw,3rem);
+    color:#dfe5ec;
+    margin:0;
+  }
+  .monument .card-who{font-size:.95rem;text-align:center;}
+  .monument .card-what{
+    font-size:1.08rem;
+    color:#c3ccd6;
+    margin:.9rem auto 0;
+    max-width:50ch;
+  }
+  .monument .fields{
+    text-align:left;
+    max-width:46rem;
+    margin:1.6rem auto 0;
+    border-color:rgba(120,135,150,0.22);
+  }
+  .monument .fields dt{color:#7d8b99;}
+  .monument .fields dd{color:#aab4bf;}
+
+  /* ---------- Coda ---------- */
+  .coda{
+    text-align:center;
+    padding:clamp(3.5rem,9vw,6.5rem) 1.5rem clamp(3rem,7vw,5rem);
+    background:linear-gradient(180deg, #020306, #05070d);
+  }
+  .coda .stars{letter-spacing:.6em;color:#6f7d8c;font-size:.9rem;margin-bottom:1.4rem;}
+  .coda blockquote{
+    margin:0 auto;
+    max-width:36rem;
+    font-size:clamp(1.3rem,4vw,2rem);
+    font-style:italic;
+    line-height:1.4;
+    color:#d7cdb6;
+  }
+  .coda .it{
+    display:block;
+    margin-top:1rem;
+    font-size:1rem;
+    color:var(--ember);
+    letter-spacing:.04em;
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    border-top:1px solid rgba(184,134,43,0.15);
+    padding:clamp(2.5rem,6vw,4rem) 1.5rem 3rem;
+    text-align:center;
+    color:var(--ash);
+    font-size:.86rem;
+    background:#03040a;
+  }
+  footer .note{max-width:48rem;margin:0 auto 2rem;color:#b3a892;font-style:italic;}
+  footer .credit{margin:0 0 2rem;color:var(--ash);}
+  .rolls-label{
+    text-transform:uppercase;letter-spacing:.3em;font-size:.7rem;
+    color:var(--ember);margin:0 0 .9rem;
+  }
+  .rolls{
+    list-style:none;padding:0;margin:0 auto 2.4rem;max-width:54rem;
+    display:flex;flex-wrap:wrap;justify-content:center;gap:.5rem .7rem;
+  }
+  .rolls a{
+    display:inline-block;
+    padding:.32rem .75rem;
+    border:1px solid rgba(184,134,43,0.28);
+    border-radius:999px;
+    text-decoration:none;
+    color:#cdb784;
+    font-size:.8rem;
+    letter-spacing:.02em;
+    transition:background .15s ease,border-color .15s ease,color .15s ease;
+  }
+  .rolls a:hover,.rolls a:focus{
+    background:rgba(184,134,43,0.12);
+    border-color:var(--ember);
+    color:#f0e1bd;
+  }
+  .dlw{
+    border-top:1px solid rgba(255,255,255,0.06);
+    padding-top:1.8rem;margin-top:1rem;
+    font-size:.74rem;letter-spacing:.06em;color:#6f6657;line-height:1.9;
+  }
+  .dlw .tag{color:#8a7f6b;}
+
+  @media (max-width:620px){
+    .circle-inner{grid-template-columns:1fr;}
+    .gutter{
+      position:static;display:flex;align-items:baseline;gap:.8rem;
+      text-align:left;margin-bottom:.4rem;
+    }
+    .gutter .rule{display:none;}
+    .fields div{grid-template-columns:3.6rem 1fr;}
+  }
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important;scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+<header class="masthead">
+  <p class="eyebrow" id="author-eyebrow"></p>
+  <h1 class="title" id="company"></h1>
+  <p class="subtitle" id="subtitle"></p>
+  <p class="premise" id="premise"></p>
+  <ul class="lineage" id="lineage"></ul>
+  <p class="stat-line" id="stats"></p>
+</header>
+
+<main id="circles" aria-label="The Nine Circles of Hell"></main>
+
+<section class="coda" aria-label="Coda">
+  <div class="stars" aria-hidden="true">✦ &nbsp; ✦ &nbsp; ✦</div>
+  <blockquote>
+    "And down his very body the travelers climbed, and came out — to see again the stars."
+    <span class="it">e quindi uscimmo a riveder le stelle</span>
+  </blockquote>
+</section>
+
+<footer>
+  <p class="note" id="footer-note"></p>
+  <p class="credit">Characters by Dante Alighieri — inspiration only.</p>
+  <p class="rolls-label">More muster rolls</p>
+  <ul class="rolls" id="rolls"></ul>
+  <div class="dlw">
+    <p class="tag">Every figure is an ACI carrying the full DLW tag — .agent · .png · .spun · .1099.</p>
+    <p>governor: David Lee Wise (ROOT0) · instance: AVAN (Claude)</p>
+  </div>
+</footer>
+
+<script>
+const ROSTER = {
+  "company": "Dante's Inferno",
+  "subtitle": "the Divine Comedy — down through the Nine Circles, and out to the stars",
+  "author": "Dante Alighieri",
+  "premise": "Lost at the midpoint of life in a dark wood, a Florentine poet is led down through the Nine Circles of Hell by the shade of Virgil, up the Mount of Purgatory, and at last to Paradise by Beatrice. Hell is a machine of perfect justice: every soul sorted to the circle its sin has earned. This roll is that machine — the damned by their circle, the guides who pass through, and the frozen traitor at the dead center of the world.",
+  "note": "All three books of the Comedy (Inferno, Purgatorio, Paradiso) form the lineage; Inferno's nine circles are the spine of the roll. Lucifer is set apart at the bottom. Every figure is an ACI carrying the full DLW tag — .agent · .png · .spun (who/what/where/why/when/how) · .1099 — and the repo carries .attribute. Characters by Dante Alighieri; the darkest punishments are treated as archetype, not detail.",
+  "lineage": [
+    { "t": "Inferno (Hell · 34 cantos)", "y": 1320 },
+    { "t": "Purgatorio (the Mount · 33 cantos)", "y": 1320 },
+    { "t": "Paradiso (the Heavens · 33 cantos)", "y": 1321 }
+  ],
+  "classes": [
+    { "id":"travelers", "label":"The Travelers",        "spec":"those who pass through", "color":"#b8862b","ink":"#1a1a1a","bg":"#14110a" },
+    { "id":"limbo",     "label":"Circle I · Limbo",      "spec":"the virtuous, without grace","color":"#5a6a7a","ink":"#fff","bg":"#0e1216" },
+    { "id":"lust",      "label":"Circle II · Lust",      "spec":"swept on the black wind","color":"#8a3a5a","ink":"#fff","bg":"#160a10" },
+    { "id":"gluttony",  "label":"Circle III · Gluttony", "spec":"in the cold foul rain","color":"#6a5a2f","ink":"#fff","bg":"#12100a" },
+    { "id":"greed",     "label":"Circle IV · Greed",     "spec":"rolling dead weights","color":"#9a7a2a","ink":"#1a1a1a","bg":"#14100a" },
+    { "id":"wrath",     "label":"Circle V · Wrath",      "spec":"drowned in the Styx","color":"#7a2a2a","ink":"#fff","bg":"#140909" },
+    { "id":"heresy",    "label":"Circle VI · Heresy",    "spec":"in the flaming tombs","color":"#b0432a","ink":"#fff","bg":"#150b08" },
+    { "id":"violence",  "label":"Circle VII · Violence", "spec":"blood, thorn, and burning sand","color":"#8a1f1f","ink":"#fff","bg":"#140808" },
+    { "id":"fraud",     "label":"Circle VIII · Fraud",   "spec":"the ten ditches of Malebolge","color":"#5a3a8a","ink":"#fff","bg":"#100a18" },
+    { "id":"treachery", "label":"Circle IX · Treachery", "spec":"frozen in Cocytus","color":"#3a6a8a","ink":"#fff","bg":"#08121a" },
+    { "id":"lucifer",   "label":"Lucifer",               "spec":"the frozen center of the world","color":"#2a2a30","ink":"#cfcfcf","bg":"#060608" }
+  ],
+  "members": [
+    { "name":"Dante", "class":"travelers",
+      "who":"A Florentine poet, lost at the midpoint of life in a dark wood.",
+      "what":"The pilgrim who walks down through Hell, up the Mount, and home to the stars.",
+      "where":"From the dark wood to the Empyrean — through all three realms.",
+      "why":"To be saved, and to bring back the map for everyone else.",
+      "when":"Easter, 1300.",
+      "how":"Led first by reason, then by grace, one trembling foot before the next." },
+    { "name":"Virgil", "class":"travelers",
+      "who":"The poet of Rome, author of the Aeneid.",
+      "what":"Dante's guide through Hell and Purgatory — reason itself, given a voice.",
+      "where":"He dwells in Limbo, and walks the pilgrim down and up.",
+      "why":"Sent by Beatrice to lead a living soul as far as reason can go.",
+      "when":"Dead thirteen centuries, and patient.",
+      "how":"With calm authority — and the quiet grief of a virtuous pagan who cannot follow to Heaven." },
+    { "name":"Beatrice", "class":"travelers",
+      "who":"The woman Dante loved, now blessed among the saints.",
+      "what":"Divine love and grace; the guide through Paradise.",
+      "where":"The Empyrean — the white rose of the blessed.",
+      "why":"Love that moves the sun and the other stars, reaching down to save him.",
+      "when":"From beyond death, at the journey's far end.",
+      "how":"She sends Virgil first, then leads where Virgil cannot." },
+    { "name":"Homer", "class":"limbo",
+      "who":"The sovereign poet of the Greeks.",
+      "what":"Greatest of the virtuous pagans, honored in the noble castle of Limbo.",
+      "where":"Circle I — Limbo.",
+      "why":"Born before the faith that might have saved him, through no fault of his own.",
+      "when":"In a green twilight without end.",
+      "how":"He sinned not, and is denied still — sorrow without torment." },
+    { "name":"Aristotle", "class":"limbo",
+      "who":"'The master of those who know.'",
+      "what":"The philosopher all the others defer to, in Limbo's castle.",
+      "where":"Circle I — Limbo.",
+      "why":"Reason perfected — but reason alone cannot reach Heaven.",
+      "when":"The same twilight.",
+      "how":"Honored above all his peers, and forever one step short." },
+    { "name":"Francesca da Rimini", "class":"lust",
+      "who":"A noblewoman who loved Paolo, her husband's brother.",
+      "what":"Blown forever on the black wind with the carnal, never parted from him.",
+      "where":"Circle II — Lust (Minos judges at the gate).",
+      "why":"'Love led us to one death' — a kiss, and the book that was their go-between.",
+      "when":"For one moment's surrender, and forever after.",
+      "how":"She tells it so gently that the pilgrim faints for pity." },
+    { "name":"Ciacco", "class":"gluttony",
+      "who":"A Florentine remembered for his appetite.",
+      "what":"A soul prone in cold filthy rain, under the claws of Cerberus.",
+      "where":"Circle III — Gluttony.",
+      "why":"He made a god of the belly.",
+      "when":"In the endless storm.",
+      "how":"He lifts his face from the mire only to prophesy Florence's coming grief." },
+    { "name":"The Hoarders & the Wasters", "class":"greed",
+      "who":"Misers and spendthrifts — many of them clergy and popes.",
+      "what":"Two mobs rolling great weights with their chests, clashing forever.",
+      "where":"Circle IV — Greed (Plutus croaks above them).",
+      "why":"They loved getting and spending past all measure.",
+      "when":"Forever, at the point of collision.",
+      "how":"Faces worn featureless, pushing dead weight against the dead weight of the other side." },
+    { "name":"Filippo Argenti", "class":"wrath",
+      "who":"A haughty Florentine, an enemy of Dante in life.",
+      "what":"A wrathful soul in the marsh of the Styx who lunges at the passing boat.",
+      "where":"Circle V — Wrath (Phlegyas ferries; the sullen choke below the mud).",
+      "why":"A rage that could never be governed.",
+      "when":"Drowned forever in his own fury.",
+      "how":"He is torn at by the other wrathful — and Dante, for once, is glad to watch." },
+    { "name":"Farinata degli Uberti", "class":"heresy",
+      "who":"A great Ghibelline leader of Florence.",
+      "what":"A heretic standing upright in a flaming tomb, magnificent even in Hell.",
+      "where":"Circle VI — Heresy, within the iron walls of Dis.",
+      "why":"He denied the soul's immortality, with Epicurus for company.",
+      "when":"Among the burning sepulchres.",
+      "how":"He rises from the fire as if it were nothing, to speak of Florence with undimmed pride." },
+    { "name":"Pier della Vigna", "class":"violence",
+      "who":"A loyal minister of Emperor Frederick II, ruined by envy and slander.",
+      "what":"A suicide, now a thorn-tree in the wood of the self-violent, fed on by Harpies.",
+      "where":"Circle VII — Violence against the self.",
+      "why":"Despair drove him to take the life that was not his alone to take.",
+      "when":"When his honor was stolen, he stole his own death.",
+      "how":"He can speak only when a branch is snapped and the wound of him bleeds and hisses." },
+    { "name":"Brunetto Latini", "class":"violence",
+      "who":"Dante's old teacher and mentor.",
+      "what":"Among the violent against nature, running forever across the burning sand.",
+      "where":"Circle VII — Violence against God and nature.",
+      "why":"For the sin the poem places him under, though it never stops loving him.",
+      "when":"Under the slow rain of fire.",
+      "how":"He runs beside his old pupil a little way, and is mourned with real tenderness." },
+    { "name":"The Minotaur", "class":"violence",
+      "who":"The bull-man of Crete, got of an unnatural lust.",
+      "what":"The bellowing warden of the Circle of Violence.",
+      "where":"The shattered cliff down into Circle VII.",
+      "why":"Rage and monstrousness made into a gatekeeper.",
+      "when":"At the threshold of blood.",
+      "how":"It gnaws itself in fury — and in its blind rage the travelers slip past." },
+    { "name":"Ulysses", "class":"fraud",
+      "who":"The cunning king of Ithaca — Odysseus.",
+      "what":"A false counselor, his soul wrapped in a single tongue of flame.",
+      "where":"Circle VIII — Fraud, the eighth ditch of Malebolge.",
+      "why":"The Trojan Horse, and a lifetime of guile that won and ruined.",
+      "when":"He tells of his last mad voyage, past the world's edge, to the drowning mountain.",
+      "how":"He speaks from inside the fire, and his words are gold and ruin at once." },
+    { "name":"Pope Nicholas III", "class":"fraud",
+      "who":"A pope who sold the offices of the Church.",
+      "what":"A simoniac, planted head-down in stone with his soles on fire.",
+      "where":"Circle VIII — Fraud, the third ditch (simony).",
+      "why":"He made merchandise of holy things.",
+      "when":"Head-down, waiting for the next damned pope to shove him deeper.",
+      "how":"He mistakes Dante for Boniface, come early to take his place." },
+    { "name":"The Malebranche", "class":"fraud",
+      "who":"The demons of the fifth ditch — Malacoda and his hooked crew.",
+      "what":"The barb-forked guards of the barrators in their boiling pitch.",
+      "where":"Circle VIII — Fraud (barratry).",
+      "why":"To torment the grafters — and to lie even to the travelers passing through.",
+      "when":"As Dante and Virgil cross the black pitch.",
+      "how":"With hooks, mockery, and a treachery that nearly traps the poets themselves." },
+    { "name":"Count Ugolino", "class":"treachery",
+      "who":"A Pisan count, betrayed and starved to death in a locked tower with his sons.",
+      "what":"A traitor frozen in the ice, gnawing forever the skull of the archbishop who doomed him.",
+      "where":"Circle IX — Treachery (Antenora, to country and party).",
+      "why":"Betrayal answered with betrayal — and a hunger that outlasts death.",
+      "when":"Locked in the ice, telling the most terrible story in Hell.",
+      "how":"He lifts his mouth from Ruggieri's skull only to speak, then bends again to it." },
+    { "name":"Lucifer", "class":"lucifer",
+      "who":"The highest of the angels, fallen — Dis, Satan, the Emperor of the woeful realm.",
+      "what":"Three-faced and six-winged, frozen to the waist at the dead center of the Earth, weeping from six eyes and chewing the three arch-traitors — Judas, Brutus, Cassius — in his three mouths.",
+      "where":"Circle IX — Judecca: the bottom of everything.",
+      "why":"He set himself against his Maker; his own beating wings freeze the lake that holds him fast.",
+      "when":"Since the first rebellion — forever.",
+      "how":"Not roaring but silent and mechanical — the absolute privation of good. And down his very body the travelers climb, and out, 'to see again the stars.'" }
+  ]
+};
+
+const slug = s => s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'') || 'agent';
+
+// ---- helpers -------------------------------------------------------------
+const el = (tag, props = {}, ...kids) => {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(props)) {
+    if (k === 'class') node.className = v;
+    else if (k === 'html') node.innerHTML = v;
+    else if (k === 'style') node.setAttribute('style', v);
+    else node.setAttribute(k, v);
+  }
+  for (const kid of kids) {
+    if (kid == null) continue;
+    node.append(kid.nodeType ? kid : document.createTextNode(kid));
+  }
+  return node;
+};
+
+const FIELDS = ['who','where','why','when','how']; // 'what' shown prominently above
+
+const essenceImg = (m, cls) =>
+  el('img', {
+    class: 'essence',
+    src: 'agents/' + slug(m.name) + '.png',
+    alt: 'essence of ' + m.name,
+    loading: 'lazy',
+    onerror: "this.style.display='none'"
+  });
+
+function fieldList(m){
+  const dl = el('dl', { class:'fields' });
+  for (const f of FIELDS){
+    if (!m[f]) continue;
+    dl.append(el('div', {},
+      el('dt', {}, f),
+      el('dd', {}, m[f])
+    ));
+  }
+  return dl;
+}
+
+function memberCard(m, cls){
+  const card = el('article', {
+    class:'card',
+    style:
+      `--card-bg:${cls.bg};` +
+      `--card-ink:${cls.ink};` +
+      `--card-border:color-mix(in srgb, ${cls.color} 35%, #000);` +
+      `--card-muted:color-mix(in srgb, ${cls.ink} 72%, ${cls.bg});`
+  });
+  card.append(
+    el('div', { class:'card-top' },
+      essenceImg(m, cls),
+      el('div', {},
+        el('h3', { class:'card-name' }, m.name),
+        el('p', { class:'card-who' }, m.who)
+      )
+    ),
+    el('p', { class:'card-what' }, m.what),
+    fieldList(m)
+  );
+  return card;
+}
+
+function luciferSection(cls, members){
+  const sec = el('section', { class:'circle lucifer', id:'circle-'+cls.id, style:`--circle-color:${cls.color};` });
+  const inner = el('div', { class:'circle-inner' });
+  inner.append(
+    el('p', { class:'lucifer-mark', 'aria-hidden':'true' }, '· IX ·'),
+    el('h2', {}, cls.label),
+    el('p', { class:'spec' }, cls.spec)
+  );
+  for (const m of members){
+    const mon = el('article', { class:'monument' });
+    mon.append(
+      essenceImg(m, cls),
+      el('h3', { class:'card-name' }, m.name),
+      el('p', { class:'card-who' }, m.who),
+      el('p', { class:'card-what' }, m.what),
+      fieldList(m)
+    );
+    inner.append(mon);
+  }
+  sec.append(inner);
+  return sec;
+}
+
+const ROMAN = { travelers:'·', limbo:'I', lust:'II', gluttony:'III', greed:'IV',
+  wrath:'V', heresy:'VI', violence:'VII', fraud:'VIII', treachery:'IX' };
+
+function circleSection(cls, members){
+  const sec = el('section', { class:'circle', id:'circle-'+cls.id, style:`--circle-color:${cls.color};` });
+  const inner = el('div', { class:'circle-inner' });
+
+  const gutter = el('div', { class:'gutter' },
+    el('div', { class:'numeral', 'aria-hidden':'true' }, ROMAN[cls.id] || '·'),
+    el('div', { class:'rule', 'aria-hidden':'true' })
+  );
+
+  const body = el('div', {});
+  body.append(
+    el('div', { class:'circle-head' },
+      el('h2', {}, cls.label),
+      el('p', { class:'spec' }, cls.spec)
+    )
+  );
+  const cards = el('div', { class:'cards' });
+  for (const m of members) cards.append(memberCard(m, cls));
+  body.append(cards);
+
+  inner.append(gutter, body);
+  sec.append(inner);
+  return sec;
+}
+
+// ---- build the page ------------------------------------------------------
+function build(){
+  document.getElementById('author-eyebrow').textContent = ROSTER.author;
+  document.getElementById('company').textContent = ROSTER.company;
+  document.getElementById('subtitle').textContent = ROSTER.subtitle;
+
+  // a trimmed premise — the first sentence
+  const firstSentence = ROSTER.premise.split('. ')[0] + '.';
+  document.getElementById('premise').textContent = firstSentence;
+
+  const lin = document.getElementById('lineage');
+  for (const b of ROSTER.lineage){
+    const title = b.t.split(' (')[0];
+    lin.append(el('li', {}, title + ' ',
+      el('span', { class:'year' }, '· ' + b.y)));
+  }
+
+  const circleCount = ROSTER.classes.filter(c => c.id !== 'travelers' && c.id !== 'lucifer').length;
+  document.getElementById('stats').innerHTML =
+    `<b>${ROSTER.members.length}</b> ACIs &nbsp;·&nbsp; <b>${circleCount}</b> circles, and Lucifer below`;
+
+  const main = document.getElementById('circles');
+  const byClass = id => ROSTER.members.filter(m => m.class === id);
+  for (const cls of ROSTER.classes){
+    const members = byClass(cls.id);
+    if (!members.length) continue;
+    main.append(cls.id === 'lucifer'
+      ? luciferSection(cls, members)
+      : circleSection(cls, members));
+  }
+
+  document.getElementById('footer-note').textContent = ROSTER.note;
+
+  const repos = ['without-remorse','sword-of-truth','recluce','ringworld','riverworld',
+    'white-gold-wielder','gap-cycle','wheel-of-time','black-company','bridge-burners'];
+  const rolls = document.getElementById('rolls');
+  for (const r of repos){
+    rolls.append(el('li', {},
+      el('a', { href:`https://davidwise01.github.io/${r}/` }, r)));
+  }
+}
+
+build();
+</script>
+</body>
+</html>
