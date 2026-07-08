@@ -4,6 +4,6 @@ slug  : dantes-inferno
 seal  : a707f8bdfbd4d5d5ed5087681bfb87b17def92897ef859b92b339385949b24cf
 prev  : cdd16551aab5d167fc5fcd1e092d5a284929d5d9b3aec907d126c6ca9ae96bc1
 link  : 896c15047e4d6ecb5b9cb156022fecd135ab5efc5850a1c2f07ec6b96300ef81
-head  : 3447d3a0533aaf1e29a8bdc67a9774884fb3ae9dbc8a17064b7a008ca3c4ec90
+head  : 13f9ace173ef2e60af38912ba329b4afcb5a38b84a0e4495e8d30327f8c99cc2
 
 — the tether: link = sha256(index|slug|seal|prev). the chain head commits to the whole corpus.
